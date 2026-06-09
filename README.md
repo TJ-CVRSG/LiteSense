@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 ### Data Preparation
 
-* General Operation：
+* General Operation:
   * Store data in paired files, for example: ``fileRootName_rgb.jpg (uint8)`` and ``fileRootName_depth.png (uint16)``, where the depth map is stored in millimeters.
   * Create file lists for training or validation data in the following format:
     ```json
@@ -88,7 +88,7 @@ pip install -r requirements.txt
 
 * For THDR3K:
   * Downloads: We have uploaded the collected and organized indoor CNH-ToF-RGB dataset to [Google Drive](https://drive.google.com/file/d/1YhEKEvQARr1c0OW348XC8rwQSIoltAOS/view?usp=drive_link).
-  * Dataset Description: The RGB images and depth maps captured by RealSense follow the same data format as the previously used public datasets. The ToF data collected by VL53L8CH are stored as text files, mainly containing entries such as ``nb_target_detected``, ``distance_mm``, and ``cnh_data``. Detailed descriptions of these fields can be found in the series of [Documents](https://www.st.com.cn/zh/imaging-and-photonics-solutions/vl53l8ch.html#documentation) provided by STM, the sensor vendor.
+  * Data Format: The RGB images and depth maps captured by RealSense follow the same data format as the previously used public datasets. The ToF data collected by VL53L8CH are stored as text files, mainly containing entries such as ``nb_target_detected``, ``distance_mm``, and ``cnh_data``. Detailed descriptions of these fields can be found in the series of [Documents](https://www.st.com.cn/zh/imaging-and-photonics-solutions/vl53l8ch.html#documentation) provided by STM, the sensor vendor.
   * Preprocess: The current ToF sensor only updates valid measurements during data transmission and does not clear invalid values. Therefore, ``nb_target_detected`` must be used to mask the actually valid measurements in each frame. In addition, due to hardware installation constraints, there is an orientation discrepancy between the ToF sensor and the RGB camera. To ensure correct spatial alignment and overlapping coverage, the ToF data must be transformed to the proper orientation.
     ```python
     # mask invalid data
@@ -103,7 +103,8 @@ pip install -r requirements.txt
 
 ### Configuration
 
-* ToF Data Configs: Configure the pixel alignment information for the low-resolution ToF sensor and the physical parameters used in simulation.
+* ToF Data Configs: 
+  Configure the pixel alignment information for the low-resolution ToF sensor and the physical parameters used in simulation.
   ```python
   parser.add_argument("--zone-size", type=int, default=52, help="Size of each zone cell in pixels")
   parser.add_argument("--zone-grid-rows", type=int, default=8, help="Number of zone grid rows")
