@@ -1,0 +1,39 @@
+--mode                      train
+--name                      exp-litesense-nyu
+--input-width               544
+--input-height              416
+--output-path               ./Runs
+
+--batch-size                32
+--epoch                     100
+--validate
+# --resume                  <checkpoint.pth>
+# --pretrain                <pretrained.pt>
+--early-stop-patience       20
+
+--num-workers               4
+--dataset                   NYUv2
+--data-path                 ./Datasets/dataset_nyu
+--data-list                 ./Datasets/dataset_nyu/nyu_24k.json
+--data-path-eval            ./Datasets/dataset_nyu
+--data-list-eval            ./Datasets/dataset_nyu/nyu_24k.json
+
+
+# Training Hyperparameters (defaults shown below)
+--lr                        1e-3
+--lr-min                    1e-5
+--warmup-epochs             5
+--weight-decay              1e-2
+--adam-beta1                0.9
+--adam-beta2                0.999
+--adam-eps                  1e-8
+
+# Zone configuration (defaults shown below)
+--zone-size                52
+--zone-grid-rows           8
+--zone-grid-cols           8
+
+# Simulation parameters (defaults shown below)
+--sim-cnh-bins             18
+--sim-cnh-range            5.4
+--sim-dis-max              4.0

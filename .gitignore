@@ -1,0 +1,53 @@
+# Python cache / build artifacts
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments / local config
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs / temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Data / model files
+dataset/
+datasets/
+Dataset/
+Datasets/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.h5
+*.hdf5
+*.npz
+*.mat
+
+# Results
+Runs/
+runs/
+results/
+outputs/
+wandb/
+mlruns/

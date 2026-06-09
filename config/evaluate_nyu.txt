@@ -1,0 +1,20 @@
+--mode                      evaluate
+--input-width               544
+--input-height              416
+--output-path               ./Runs
+--weights                   ./weights/best.pt
+
+--dataset                   NYUv2
+--data-path-eval            ./Datasets/dataset_nyu
+--data-list-eval            ./Datasets/dataset_nyu/nyu_24k.json
+--save-error
+
+# Zone configuration (defaults shown below)
+--zone-size                52
+--zone-grid-rows           8
+--zone-grid-cols           8
+
+# Simulation parameters (defaults shown below)
+--sim-cnh-bins             18
+--sim-cnh-range            5.4
+--sim-dis-max              4.0
